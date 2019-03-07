@@ -1,0 +1,56 @@
+{{define "content"}}
+{{with .Music}}
+	<div class="row detail">
+		<div class="columns-small-8 small-offset-2">
+			<div class="row">
+				<div class="columns small-4">
+					<img src="/img/{{.ImageURL}}"  alt="Girls" />
+				</div>
+				<div class="columns small-8 details">
+					<h2>{{.Name}}</h2>
+					<div class="row">
+						<div class="columns small-3 text-right">
+							Price
+						</div>
+						<div class="columns small-8 small-offset-1">
+							{{.PricePerSong | printf "$%.2f"}} / song
+						</div>
+					</div>
+					<div class="row">
+						<div class="columns small-8 small-offset-4">
+							{{.PricePerSong | printf "$%.2f"}} / song
+						</div>
+					</div>
+					<div class="row">
+						<div class="columns small-3 text-right">
+							Origional
+						</div>
+						<div class="columns small-8 small-offset-1">
+							{{if .IsOrigional}}Yes{{else}}No{{end}}
+						</div>
+					</div>
+					<div class="row">
+						<div class="columns small-3 text-right">
+							Author
+						</div>
+						<div class="columns small-8 small-offset-1">
+							{{.Origional}}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="columns small-10 small-offset-1">
+					<hr/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="columns small-12">
+					{{.DescriptionLong}}
+				</div>
+			</div>
+		</div>
+	</div>
+	{{end}}
+	{{end}}
+	

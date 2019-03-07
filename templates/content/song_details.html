@@ -1,0 +1,22 @@
+{{define "content"}}
+	<div class="row">
+		<div class="columns small-12">
+			<div class="row">
+				<div class="columns small-12">
+					<ul class="row music small-block-grid-4"></ul>
+						{{range .Music}}
+						<li class="music">
+							<img src="/img/{{.ImageURL}}" alt="{{.ImageURL}}" />
+							<a href="/html/song_detail">
+								<h3>{{.Name}}</h3></a>
+							<p>{{.DescriptionShort}}</p>
+							<p>{{.PricePerSong | printf "%.2f"}} / song</p>
+						</li>
+						{{end}}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+{{end}}
+
