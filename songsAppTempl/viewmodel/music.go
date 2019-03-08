@@ -13,7 +13,7 @@ type MusicViewModel struct {
 	Music  Music
 }
 
-//Music  defines Music
+//Music defines Music
 type Music struct {
 	Name             string
 	DescriptionShort string
