@@ -6,6 +6,8 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/JayneJacobs/songsWebAppwtemplAPI/songsAppTempl/model"
+
 	"github.com/JayneJacobs/songsWebAppwtemplAPI/songsAppTempl/viewmodel"
 )
 
@@ -17,7 +19,6 @@ type home struct {
 func (h home) registerRoutes() {
 	http.HandleFunc("/", h.handleHome)
 	http.HandleFunc("/home", h.handleHome)
-
 	http.HandleFunc("/login", h.handleLogin)
 }
 
@@ -25,7 +26,6 @@ func (h home) handleHome(w http.ResponseWriter, r *http.Request) {
 	vm := viewmodel.NewHome()
 	w.Header().Add("Content-Type", "text/html")
 	// time.Sleep(4 * time.Second)
-
 	h.homeTemplate.Execute(w, vm)
 }
 
@@ -38,7 +38,8 @@ func (h home) handleLogin(w http.ResponseWriter, r *http.Request) {
 		}
 		email := r.Form.Get("email")
 		password := r.Form.Get("password")
-		if email == "test@gmail.com" && password == "password" {
+		if user, err := model.Login(email, password); err != nil {
+			log.Printf("User ha logged in: %v\n", user)
 			http.Redirect(w, r, "/home", http.StatusTemporaryRedirect)
 			return
 		} else {

@@ -40,6 +40,7 @@ func (s song) handleSongs(w http.ResponseWriter, r *http.Request) {
 func (s song) handleCategory(w http.ResponseWriter, r *http.Request, categoryID int) {
 	music := model.GetMusicForCategory(categoryID)
 	vm := viewmodel.NewSongDetail(music)
+	w.Header().Add("Content-Type", "text/html")
 	s.categoryTemplate.Execute(w, vm)
 }
 
