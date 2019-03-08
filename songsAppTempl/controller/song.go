@@ -32,6 +32,7 @@ func (s song) handleSongs(w http.ResponseWriter, r *http.Request) {
 
 		categories := model.GetCategories()
 		vm := viewmodel.NewSongs(categories)
+		w.Header().Add("Content-Type", "text/html")
 		s.songTemplate.Execute(w, vm)
 	}
 }

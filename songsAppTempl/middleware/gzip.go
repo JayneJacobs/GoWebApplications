@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-// GzipMiddleware creates the Handler
+// GzipMiddleware sets up the Handler for gzip middleware
 type GzipMiddleware struct {
 	Next http.Handler
 }
@@ -22,13 +22,12 @@ func (gm *GzipMiddleware) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		gm.Next.ServeHTTP(w, r)
 		return
 	}
-
 	w.Header().Add("Content-Encoding", "gzip")
-	gzipwriter := gzip.NewWriter(w)
-	defer gzipwriter.Close()
+	gzipWriter := gzip.NewWriter(w)
+	defer gzipWriter.Close()
 	grw := gzipResponseWriter{
 		ResponseWriter: w,
-		Writer:         gzipwriter,
+		Writer:         gzipWriter,
 	}
 	gm.Next.ServeHTTP(grw, r)
 }

@@ -21,6 +21,7 @@ func (ml memberLocator) registerRoutes() {
 
 //NewMemberLocator is the addresses of the band members houses
 func (ml memberLocator) handleMemberLocator(w http.ResponseWriter, r *http.Request) {
+	w.Header().Add("Content-Type", "text/html")
 	vm := viewmodel.NewMemberLocator()
 	ml.memberLocatorTemplate.Execute(w, vm)
 }
