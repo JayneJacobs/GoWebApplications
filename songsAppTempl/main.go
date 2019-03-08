@@ -1,19 +1,38 @@
 package main
 
 import (
+	"database/sql"
+
+	"fmt"
 	"html/template"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"os"
 
+	"github.com/JayneJacobs/songsWebAppwtemplAPI/songsAppTempl/model"
+
 	"github.com/JayneJacobs/songsWebAppwtemplAPI/songsAppTempl/controller"
 	"github.com/JayneJacobs/songsWebAppwtemplAPI/songsAppTempl/middleware"
+	_ "github.com/lib/pq"
 )
 
 func main() {
 	templates := populateTemplates()
+	db := connectToDatabase()
+	defer db.Close()
 	controller.Startup(templates)
 	http.ListenAndServe(":8070", &middleware.TimeoutMiddleware{new(middleware.GzipMiddleware)})
+
+}
+
+func connectToDatabase() *sql.DB {
+	db, err := sql.Open("postgres", "postgres://postgres:songs@localhost/postgres?sslmode=disable")
+	if err != nil {
+		log.Fatalln(fmt.Errorf("Unable to connect to database: %v", err))
+	}
+	model.SetDatabase(db)
+	return db
 }
 
 func populateTemplates() map[string]*template.Template {

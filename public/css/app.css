@@ -15207,7 +15207,7 @@ th.hide-for-touch {
 
 .categories .category {
   margin-bottom: 1.5em;
-  background-color: #97d077;
+  background-color: #77b7d0;
   width: 90%; }
   .categories .category.orient-left {
     border-top-left-radius: 100em;
@@ -15231,7 +15231,7 @@ th.hide-for-touch {
     color: #333333; }
 
 .main-menu {
-  background-color: #97d077;
+  background-color: #77b7d0;
   padding-bottom: 2em;
   margin-bottom: 1em; }
   .main-menu h2 {
@@ -15307,7 +15307,7 @@ button {
   margin: 0 1em;
   border-radius: 1em;
   color: #333333 !important;
-  background-color: #97d077;
+  background-color: #77b7d0;
   text-transform: uppercase;
   font-size: 1em !important; }
 
@@ -15344,7 +15344,7 @@ nav {
       font-family: "Myriad Pro"; }
       nav .item a:hover:before, nav .item a.active:before {
         content: ' ';
-        background-color: #97d077;
+        background-color: #77b7d0;
         position: absolute;
         top: 0;
         bottom: 0;

@@ -20,6 +20,7 @@ type Category struct {
 	Title         string
 	Words         string
 	IsOrientRight bool
+	ChordsURL     string
 }
 
 // NewSongs is here
@@ -39,9 +40,10 @@ func NewSongs(categories []model.Category) Song {
 
 func categorytoVM(c model.Category) Category {
 	return Category{
-		URL:      fmt.Sprintf("/songs/%v", c.ID),
-		ImageURL: c.ImageURL,
-		Title:    c.Title,
-		Words:    c.Words,
+		URL:       fmt.Sprintf("/songs/%v", c.ID),
+		ImageURL:  c.ImageURL,
+		Title:     c.Title,
+		Words:     c.Words,
+		ChordsURL: c.ChordsURL,
 	}
 }

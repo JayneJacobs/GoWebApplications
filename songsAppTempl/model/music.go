@@ -2,6 +2,7 @@ package model
 
 import "fmt"
 
+//Music is for the song purchase
 type Music struct {
 	Name             string
 	DescriptionShort string
@@ -15,6 +16,7 @@ type Music struct {
 	CategoryID       int
 }
 
+// GetMusicForCategory sets the Music items for Songs.html
 func GetMusicForCategory(categoryID int) []Music {
 	result := []Music{}
 	for _, m := range music {
@@ -24,6 +26,8 @@ func GetMusicForCategory(categoryID int) []Music {
 	}
 	return result
 }
+
+//GetMusic is for the list of songs
 func GetMusic(musicID int) (*Music, error) {
 	for _, m := range music {
 		if m.ID == musicID {
@@ -34,7 +38,7 @@ func GetMusic(musicID int) (*Music, error) {
 }
 
 // Music defines the Music
-var music []Music = []Music{Music{
+var music = []Music{Music{
 	Name:             "Girls Just Want to have Fun",
 	DescriptionShort: "Made from fresh, organic California lemons.",
 	DescriptionLong: `Made from premium, organic Meyer lemons. These fruit are left on the tree until they reach the peak of ripeness and then juiced within 8 hours of being picked.
