@@ -6,8 +6,8 @@ import (
 	"regexp"
 	"strconv"
 
-	"github.com/JayneJacobs/songsWebAppwtemplAPI/songsAppTempl/model"
-	"github.com/JayneJacobs/songsWebAppwtemplAPI/songsAppTempl/viewmodel"
+	"github.com/JayneJacobs/songsWebAppwtemplwDB/songsAppTempl/model"
+	"github.com/JayneJacobs/songsWebAppwtemplwDB/songsAppTempl/viewmodel"
 )
 
 type song struct {

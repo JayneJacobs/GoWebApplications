@@ -6,9 +6,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/JayneJacobs/songsWebAppwtemplAPI/songsAppTempl/model"
-
-	"github.com/JayneJacobs/songsWebAppwtemplAPI/songsAppTempl/viewmodel"
+	"github.com/JayneJacobs/songsWebAppwtemplwDB/songsAppTempl/model"
+	"github.com/JayneJacobs/songsWebAppwtemplwDB/songsAppTempl/viewmodel"
 )
 
 type home struct {
@@ -43,6 +42,7 @@ func (h home) handleLogin(w http.ResponseWriter, r *http.Request) {
 			http.Redirect(w, r, "/home", http.StatusTemporaryRedirect)
 			return
 		} else {
+			log.Printf("Failed to log user in with email: %v, error was %v\n", email, err)
 			vm.Email = email
 			vm.Password = password
 		}

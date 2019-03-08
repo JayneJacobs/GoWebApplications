@@ -10,10 +10,10 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/JayneJacobs/songsWebAppwtemplAPI/songsAppTempl/model"
+	"github.com/JayneJacobs/songsWebAppwtemplwDB/songsAppTempl/model"
 
-	"github.com/JayneJacobs/songsWebAppwtemplAPI/songsAppTempl/controller"
-	"github.com/JayneJacobs/songsWebAppwtemplAPI/songsAppTempl/middleware"
+	"github.com/JayneJacobs/songsWebAppwtemplwDB/songsAppTempl/controller"
+	"github.com/JayneJacobs/songsWebAppwtemplwDB/songsAppTempl/middleware"
 	_ "github.com/lib/pq"
 )
 

@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/JayneJacobs/songsWebAppwtemplAPI/songsAppTempl/viewmodel"
+	"github.com/JayneJacobs/songsWebAppwtemplwDB/songsAppTempl/viewmodel"
 )
 
 type memberLocator struct {

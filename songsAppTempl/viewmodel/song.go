@@ -3,7 +3,7 @@ package viewmodel
 import (
 	"fmt"
 
-	"github.com/JayneJacobs/songsWebAppwtemplAPI/songsAppTempl/model"
+	"github.com/JayneJacobs/songsWebAppwtemplwDB/songsAppTempl/model"
 )
 
 //Song definition Title Active and CAtegory Map

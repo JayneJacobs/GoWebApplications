@@ -3,7 +3,7 @@ package viewmodel
 import (
 	"html/template"
 
-	"github.com/JayneJacobs/songsWebAppwtemplAPI/songsAppTempl/model"
+	"github.com/JayneJacobs/songsWebAppwtemplwDB/songsAppTempl/model"
 )
 
 //MusicViewModel defines Music Title

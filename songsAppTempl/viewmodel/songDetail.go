@@ -1,6 +1,6 @@
 package viewmodel
 
-import "github.com/JayneJacobs/songsWebAppwtemplAPI/songsAppTempl/model"
+import "github.com/JayneJacobs/songsWebAppwtemplwDB/songsAppTempl/model"
 
 //SongDetail Describes the Song page items
 type SongDetail struct {
